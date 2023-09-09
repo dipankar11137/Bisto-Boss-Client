@@ -1,14 +1,15 @@
 import Banner from "../Banner/banner";
 import Category from "../Category/Category";
-import PopularMenu from "../PopularMenu/PopularMenu";
-
+import Featured from '../Featured/Featured';
+import PopularMenu from '../PopularMenu/PopularMenu';
 
 const Home = () => {
   return (
     <div>
-      <Banner/>
+      <Banner />
       <Category />
-      <PopularMenu/>
+      <PopularMenu />
+      <Featured />
     </div>
   );
 };
