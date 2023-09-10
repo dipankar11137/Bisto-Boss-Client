@@ -11,21 +11,29 @@ const Menu = () => {
   const salad = menu.filter(item => item.category === 'salad');
   const pizza = menu.filter(item => item.category === 'pizza');
   const offered = menu.filter(item => item.category === 'offered');
+
+  const coverImg =
+    'https://ik.imagekit.io/awwybhhmo/satellite_images/pizza/beyondmenu/about_us/9.jpg?tr=w-3840';
   return (
     <div>
       <Helmet>
         <title>Bistro | Menu</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <Cover
-        img={
-          'https://ik.imagekit.io/awwybhhmo/satellite_images/pizza/beyondmenu/about_us/9.jpg?tr=w-3840'
-        }
-        title={'Our Menu'}
-      ></Cover>
+      <Cover img={coverImg} title={'Our Menu'}></Cover>
+      {/* Main cover */}
       <SectionTitle heading="Todays offer"></SectionTitle>
+      {/* offer menu items */}
       <MenuCategory items={offered}></MenuCategory>
-      {/* <PopularMenu /> */}
+      {/* Dessert menu items */}
+      <MenuCategory
+        items={dessert}
+        title={'Dessert'}
+        img={coverImg}
+      ></MenuCategory>
+      <MenuCategory items={pizza} title={'Pizza'} img={coverImg} />
+      <MenuCategory items={soup} title={'Soup'} img={coverImg} />
+      <MenuCategory items={salad} title={'Salad'} img={coverImg} />
     </div>
   );
 };
