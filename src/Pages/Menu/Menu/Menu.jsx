@@ -20,7 +20,7 @@ const Menu = () => {
         <title>Bistro | Menu</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <Cover img={coverImg} title={'Our Menu'}></Cover>
+      <Cover img={coverImg} title={'our Menu'}></Cover>
       {/* Main cover */}
       <SectionTitle heading="Todays offer"></SectionTitle>
       {/* offer menu items */}
@@ -28,12 +28,12 @@ const Menu = () => {
       {/* Dessert menu items */}
       <MenuCategory
         items={dessert}
-        title={'Dessert'}
+        title={'dessert'}
         img={coverImg}
       ></MenuCategory>
-      <MenuCategory items={pizza} title={'Pizza'} img={coverImg} />
-      <MenuCategory items={soup} title={'Soup'} img={coverImg} />
-      <MenuCategory items={salad} title={'Salad'} img={coverImg} />
+      <MenuCategory items={pizza} title={'pizza'} img={coverImg} />
+      <MenuCategory items={soup} title={'soup'} img={coverImg} />
+      <MenuCategory items={salad} title={'salad'} img={coverImg} />
     </div>
   );
 };
