@@ -5,10 +5,10 @@ import {
   loadCaptchaEnginge,
   validateCaptcha,
 } from 'react-simple-captcha';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-  const captchaRef = useState(null);
   const [disable, setDisable] = useState(true);
 
   const { signIn } = useContext(AuthContext);
@@ -24,11 +24,20 @@ const Login = () => {
     signIn(email, password).then(result => {
       const user = result.user;
       console.log(user);
+      Swal.fire({
+        title: 'Login Done',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+      });
     });
   };
 
-  const handleValidateCaptcha = () => {
-    const user_captcha_value = captchaRef.current.value;
+  const handleValidateCaptcha = e => {
+    const user_captcha_value = e.target.value;
     if (validateCaptcha(user_captcha_value)) {
       setDisable(false);
     } else {
@@ -81,18 +90,12 @@ const Login = () => {
                 <LoadCanvasTemplate />
               </label>
               <input
+                onBlur={handleValidateCaptcha}
                 type="text"
-                ref={captchaRef}
                 name="captcha"
                 placeholder="Type the text captcha"
                 className="input input-bordered"
               />
-              <button
-                onClick={handleValidateCaptcha}
-                className="btn btn-secondary btn-md mt-2"
-              >
-                Validate
-              </button>
             </div>
             <div className="form-control mt-6">
               <input
