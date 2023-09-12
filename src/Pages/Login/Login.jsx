@@ -102,9 +102,10 @@ const Login = () => {
                 className="input input-bordered"
               />
             </div>
+            {/* TODO : make button disable false */}
             <div className="form-control mt-6">
               <input
-                disabled={disable}
+                disabled={false}
                 className="btn btn-primary"
                 type="submit"
                 value="Login"
