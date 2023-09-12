@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
       <div className="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
-          <p>Copyright © 2023 ---- 76.7</p>
+          <p>Copyright © 2023 ---- 77.0</p>
         </div>
       </div>
     </footer>
