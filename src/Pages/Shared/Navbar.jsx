@@ -16,6 +16,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/menu">Our Menu</Link>
         <Link to="/order/salad">Order Food</Link>
+        <Link to="/secret">Secret</Link>
 
         {user ? (
           <button onClick={handleLogout} className="btn  btn-secondary btn-sm">
